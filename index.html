@@ -7,19 +7,16 @@
   <body>
       <h1>Export pdf</h1>
       <div class="wrapper">
-          <label id="lsdesc">Name: </label><input type="text" id="dname" value=""><br>
-          <label id="lwtlt">Age: </label><input type="number" id="indpt" value=""><br>
-          <label id="lhbd">DOB: </label><input type="date" id="inpty" value=""><br>
-          <label id="ldex">Age: </label><textarea id="inprod" name="name" rows="8" cols="80"></textarea>
+          <h1 id="tlt">Title</h1>
+          <label id="lbname">Name: </label><input type="text" id="inname" value=""><br>
+          <label id="lbage">Age: </label><input type="number" id="inage" value=""><br>
+          <label id="lbdob">DOB: </label><input type="date" id="indob" value=""><br>
+          <label id="lbover">Info: </label><textarea id="inover" name="name" rows="8" cols="80"></textarea>
       </div>
+      <br>
+      <a href="javascript:pdfexport();">Exportar PDF</a>
       <script type="text/javascript" src="script.js"></script>
       <!-- jspdf cdn -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
   </body>
-
-
-
-
-
-
 </html>

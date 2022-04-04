@@ -3,15 +3,15 @@ function pdfexport(){
     //variables
     //labels
     var ltitle = document.getElementById('tlt').innerText,
-        lsdesc = document.getElementById('lsdesc').innerText,
-        lwtlt = document.getElementById('lwtlt').innerText,
-        lhbd = document.getElementById('lhbd').innerText,
-        ldexc = document.getElementById('ldex').innerText,
+        lname = document.getElementById('lbname').innerText,
+        lage = document.getElementById('lbage').innerText,
+        ldob = document.getElementById('lbdob').innerText,
+        lover = document.getElementById('lbover').innerText;
     //input
-    var dname = document.getElementById('dname').value,
-        indpt = document.getElementById('indpt').value,
-        inproty = document.getElementById('inpty').value,
-        inprod = document.getElementById('inprod').value,
+    var inname = document.getElementById('inname').value,
+        inage = document.getElementById('inage').value,
+        indob = document.getElementById('indob').value,
+        ininfo = document.getElementById('inover').value;
 
     //jspdf part
     var doc = new jsPDF();
@@ -19,9 +19,9 @@ function pdfexport(){
     doc.setFontSize(22);
     doc.text(ltitle, 20, 10);
     doc.setFontSize(16);
-    doc.text(lsdesc + '  ' + dname, 10, 20);
-    doc.text(lwtlt + ' ' + indpt, 10, 30);
-    doc.text(lhbd + ' ' + inproty, 10, 40);
-    doc.text(ldexc + ' ' + inprod, 10, 50);
-
-  }
+    doc.text(lname + '  ' + inname, 10, 20);
+    doc.text(lage + ' ' + inage, 10, 30);
+    doc.text(ldob + ' ' + indob, 10, 40);
+    doc.text(lover + ' ' + ininfo, 10, 50);
+    doc.output('dataurlnewwindow',{filename: inname.value});
+}
