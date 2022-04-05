@@ -27,10 +27,14 @@ function pdfexport(){
     doc.setFontSize(16);
     doc.text(ldes + '  ' + indes, 10, 20);
     doc.text(lmod + ' ' + inmod, 10, 30);
-    doc.text(lmar + ' ' + inmar, 10, 40);
-    doc.text(lped + ' ' + inped, 10, 50);
-    doc.text(lfec + ' ' + infec, 10, 60);
-    doc.text(lpde + ' ' + inpde, 10, 70);
-    doc.text(lori + ' ' + inori, 10, 80);
+    JsBarcode("#code39", inmod, {
+        format: 'CODE39',
+        displayValue: false
+    });
+   
+    const img = document.querySelector('img#code39');
+ 
+    doc.setFontSize(10);
+    doc.addImage(img.src, 'JPEG', 40, 30, 50, 10);
     doc.output('dataurlnewwindow',{filename: indes.value});
 }

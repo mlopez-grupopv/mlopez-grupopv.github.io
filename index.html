@@ -17,10 +17,13 @@
           <label id="lbfec">Fecha: </label><input type="date" id="infec" value=""><br>
           <label id="lbpde">Puerto de entrada: </label><input type="text" type="number" id="inpde" value=""><br>
       </div>
+      <img id='code39' style="display: none;"/>
       <br>
       <a href="javascript:pdfexport();">Exportar PDF</a>
       <script type="text/javascript" src="script.js"></script>
       <!-- jspdf cdn -->
+      <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+      <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
