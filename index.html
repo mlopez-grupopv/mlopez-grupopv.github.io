@@ -5,13 +5,17 @@
       <title></title>
   </head>
   <body>
-      <h1>Export pdf</h1>
+      <h1>Etiquetas de importación</h1>
       <div class="wrapper">
-          <h1 id="tlt">Title</h1>
-          <label id="lbname">Name: </label><input type="text" id="inname" value=""><br>
-          <label id="lbage">Age: </label><input type="number" id="inage" value=""><br>
-          <label id="lbdob">DOB: </label><input type="date" id="indob" value=""><br>
-          <label id="lbover">Info: </label><textarea id="inover" name="name" rows="8" cols="80"></textarea>
+          <h2 id="tlt">Producto</h2>
+          <label id="lbmod">Modelo: </label><input type="text" type="number" id="inmod" value=""><br>
+          <label id="lbdes">Descripción: </label><input type="text" id="indes" value=""><br>
+          <label id="lbmar">Marca: </label><input type="text" type="number" id="inmar" value=""><br>
+          <label id="lbori">Origen: </label><input type="text" type="number" id="inori" value=""><br>
+          <h2 id="tlt">Pedimento</h2>
+          <label id="lbped">Pedimento: </label><input type="text" type="number" id="inped" value=""><br>
+          <label id="lbfec">Fecha: </label><input type="date" id="infec" value=""><br>
+          <label id="lbpde">Puerto de entrada: </label><input type="text" type="number" id="inpde" value=""><br>
       </div>
       <br>
       <a href="javascript:pdfexport();">Exportar PDF</a>
