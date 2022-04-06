@@ -21,20 +21,41 @@ function pdfexport(){
 
     //jspdf part
     var doc = new jsPDF();
+
     //add inf
-    doc.setFontSize(22);
-    doc.text(ltitle, 20, 10);
-    doc.setFontSize(16);
-    doc.text(ldes + '  ' + indes, 10, 20);
-    doc.text(lmod + ' ' + inmod, 10, 30);
+    doc.setFontSize(10);
+
+    doc.text(ldes, 10, 14);
+    doc.text(indes, 35, 14);
+
+    doc.text(lmod, 10, 20);
+    doc.text(inmod, 35, 20);
+
     JsBarcode("#code39", inmod, {
         format: 'CODE39',
         displayValue: false
     });
-   
     const img = document.querySelector('img#code39');
- 
     doc.setFontSize(10);
-    doc.addImage(img.src, 'JPEG', 40, 30, 50, 10);
+    doc.addImage(img.src, 'JPEG', 33, 22, 65, 7);
+
+    doc.text("Importador", 10, 34);
+    doc.text("PV Comunicaciones S.A de C.V", 35, 34);
+    doc.text("Colegio 6300 Int 103, Cima Comercial ", 35, 38);
+    doc.text("C.P 31216, Chihuahua, Chih. Mexico", 35, 42);
+    doc.text("RFC: PCO961119-M49", 35, 46);
+
+    doc.text(lped + ' ' + inped, 10, 64);
+
+    doc.text(lfec + ' ' + infec, 10, 74);
+
+    //code39 ped
+
+    doc.text(lpde + ' ' + inpde, 10, 84);
+
+    doc.text(lori + ' ' + inori, 10, 94);
+
+    doc.text(lmar + ' ' + inmar, 10, 54);
+
     doc.output('dataurlnewwindow',{filename: indes.value});
 }
