@@ -2,12 +2,10 @@
 function pdfexport(){
     //variables
     //labels
-    var ltitle = document.getElementById('tlt').innerText,
-        ldes = document.getElementById('lbdes').innerText,
+    var ldes = document.getElementById('lbdes').innerText,
         lmod = document.getElementById('lbmod').innerText,
         lmar = document.getElementById('lbmar').innerText,
         lped = document.getElementById('lbped').innerText,
-        lfec = document.getElementById('lbfec').innerText,
         lpde = document.getElementById('lbpde').innerText,
         lori = document.getElementById('lbori').innerText;
     //input
@@ -31,15 +29,13 @@ function pdfexport(){
     doc.text(lmod, 10, 20);
     doc.text(inmod, 35, 20);
 
-    JsBarcode("#code39", inmod, {
+    JsBarcode("#code39-model", inmod, {
         format: 'CODE39',
         displayValue: false,
         height: 28,
         margin: 0
-    });
-    const img = document.querySelector('img#code39');
-    doc.setFontSize(10);
-    doc.addImage(img.src, 'JPEG', 35, 22);
+    })
+    doc.addImage(document.querySelector('#code39-model').src, 'JPEG', 35, 22)
 
     doc.text("Importador", 10, 34);
     doc.text("PV Comunicaciones S.A de C.V", 35, 34);
@@ -47,17 +43,24 @@ function pdfexport(){
     doc.text("C.P 31216, Chihuahua, Chih. Mexico", 35, 42);
     doc.text("RFC: PCO961119-M49", 35, 46);
 
-    doc.text(lped + ' ' + inped, 10, 64);
+    doc.text(lped, 10, 54);
+    doc.text(inped, 35, 54);
 
-    doc.text(lfec + ' ' + infec, 10, 74);
+    doc.text(infec, 75, 54);
 
-    //code39 ped
-
+    JsBarcode("#code39-lot-number", inmod, {
+        format: 'CODE39',
+        displayValue: false,
+        height: 28,
+        margin: 0
+    })
+    doc.addImage(document.querySelector('#code39-lot-number').src, 'JPEG', 35, 56)
+    
     doc.text(lpde + ' ' + inpde, 10, 84);
 
     doc.text(lori + ' ' + inori, 10, 94);
 
-    doc.text(lmar + ' ' + inmar, 10, 54);
+    doc.text(lmar + ' ' + inmar, 10, 104);
 
     doc.output('dataurlnewwindow',{filename: indes.value});
 }
