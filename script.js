@@ -33,11 +33,13 @@ function pdfexport(){
 
     JsBarcode("#code39", inmod, {
         format: 'CODE39',
-        displayValue: false
+        displayValue: false,
+        height: 28,
+        margin: 0
     });
     const img = document.querySelector('img#code39');
     doc.setFontSize(10);
-    doc.addImage(img.src, 'JPEG', 33, 22, 65, 7);
+    doc.addImage(img.src, 'JPEG', 35, 22);
 
     doc.text("Importador", 10, 34);
     doc.text("PV Comunicaciones S.A de C.V", 35, 34);
