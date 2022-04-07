@@ -48,19 +48,21 @@ function pdfexport(){
 
     doc.text(infec, 75, 54);
 
-    JsBarcode("#code39-lot-number", inmod, {
+    JsBarcode("#code39-lot-number", inped, {
         format: 'CODE39',
         displayValue: false,
         height: 28,
         margin: 0
     })
-    doc.addImage(document.querySelector('#code39-lot-number').src, 'JPEG', 35, 56)
+    doc.addImage(document.querySelector('#code39-lot-number').src, 'JPEG', 35, 60)
     
-    doc.text(lpde + ' ' + inpde, 10, 84);
+    doc.text(lpde, 10, 74);
+    doc.text(inpde, 42, 74);
 
-    doc.text(lori + ' ' + inori, 10, 94);
+    doc.text(lori, 10, 80);
+    doc.text(inori, 35, 80);
 
-    doc.text(lmar + ' ' + inmar, 10, 104);
-
+    doc.text(lmar, 60, 80);
+    doc.text(inmar, 75, 80);
     doc.output('dataurlnewwindow',{filename: indes.value});
 }
