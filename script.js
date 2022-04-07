@@ -38,6 +38,8 @@ function pdfexport(){
     doc.addImage(document.querySelector('#code39-model').src, 'JPEG', 35, 22)
 
     doc.text("Importador", 10, 34);
+    logoHeight = 6; logoWidth = logoHeight * 150 / 45
+    doc.addImage(logo, 'PNG', 9.5, 35, logoWidth, logoHeight)
     doc.text("PV Comunicaciones S.A de C.V", 35, 34);
     doc.text("Colegio 6300 Int 103, Cima Comercial ", 35, 38);
     doc.text("C.P 31216, Chihuahua, Chih. Mexico", 35, 42);
