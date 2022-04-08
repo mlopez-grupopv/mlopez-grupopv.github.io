@@ -18,7 +18,12 @@ function pdfexport(){
         inori = document.getElementById('inori').value;
 
     //jspdf part
-    var doc = new jsPDF();
+    factor = 2.835
+    const doc = new jsPDF({
+      orientation: 'landscape',
+      unit: 'mm',
+      format: [75 * factor, 50 * factor]
+    })
 
     //add inf
     doc.setFontSize(7);
