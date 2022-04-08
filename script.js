@@ -1,14 +1,18 @@
-//function to export pdf DOC
+// jsPDF configuration
+
+paperWidth =  3 * 2.54 * 10 // 3 inches
+paperHeight = 2 * 2.54 * 10 // 2 inches
+marginRadio = 2.5
+
 function pdfexport(){
-    //variables
-    //labels
+
     var ldes = document.getElementById('lbdes').innerText,
         lmod = document.getElementById('lbmod').innerText,
         lmar = document.getElementById('lbmar').innerText,
         lped = document.getElementById('lbped').innerText,
         lpde = document.getElementById('lbpde').innerText,
         lori = document.getElementById('lbori').innerText;
-    //input
+
     var indes = document.getElementById('indes').value,
         inmod = document.getElementById('inmod').value,
         inmar = document.getElementById('inmar').value;
@@ -17,17 +21,15 @@ function pdfexport(){
         inpde = document.getElementById('inpde').value,
         inori = document.getElementById('inori').value;
 
-    //jspdf part
-    factor = 2.835
+    factor = 2.83465
     const doc = new jsPDF({
       orientation: 'landscape',
       unit: 'mm',
-      format: [75 * factor, 50 * factor]
+      format: [paperWidth * factor, paperHeight * factor]
     })
 
-    doc.roundedRect(1, 1, 73, 48, 2.5, 2.5)
+    doc.roundedRect(1, 1, paperWidth - 2, paperHeight - 2, marginRadio, marginRadio)
 
-    //add inf
     doc.setFontSize(7);
 
     doc.text(ldes, 2, 5);
