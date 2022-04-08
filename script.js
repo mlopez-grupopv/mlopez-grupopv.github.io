@@ -78,5 +78,6 @@ function pdfexport(){
     doc.text(lmar, 44, 45);
     doc.text(inmar, 52, 45);
 
-    doc.output('dataurlnewwindow',{filename: indes.value});
+    doc.output('dataurlnewwindow')
+    // doc.save(`${inmod} - ${inped}`)
 }
