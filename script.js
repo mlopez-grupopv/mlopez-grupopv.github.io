@@ -25,6 +25,8 @@ function pdfexport(){
       format: [75 * factor, 50 * factor]
     })
 
+    doc.roundedRect(1, 1, 73, 48, 2.5, 2.5)
+
     //add inf
     doc.setFontSize(7);
 
@@ -73,5 +75,6 @@ function pdfexport(){
 
     doc.text(lmar, 54, 45);
     doc.text(inmar, 62, 45);
+
     doc.output('dataurlnewwindow',{filename: indes.value});
 }
