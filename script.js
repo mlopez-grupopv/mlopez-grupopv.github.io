@@ -21,50 +21,52 @@ function pdfexport(){
     var doc = new jsPDF();
 
     //add inf
-    doc.setFontSize(10);
+    doc.setFontSize(7);
 
-    doc.text(ldes, 10, 14);
-    doc.text(indes, 35, 14);
+    doc.text(ldes, 6, 5);
+    doc.text(indes, 32, 5);
 
-    doc.text(lmod, 10, 20);
-    doc.text(inmod, 35, 20);
+    doc.text(lmod, 6, 8);
+    doc.text(inmod, 32, 8);
 
     JsBarcode("#code39-model", inmod, {
         format: 'CODE39',
         displayValue: false,
-        height: 28,
-        margin: 0
+        height: 22,
+        margin: 0,
+        width: 0.8,
     })
-    doc.addImage(document.querySelector('#code39-model').src, 'JPEG', 35, 22)
+    doc.addImage(document.querySelector('#code39-model').src, 'JPEG', 32, 10)
 
-    doc.text("Importador", 10, 34);
+    doc.text("Importador", 5, 19);
     logoHeight = 6; logoWidth = logoHeight * 150 / 45
-    doc.addImage(logo, 'PNG', 9.5, 35, logoWidth, logoHeight)
-    doc.text("PV Comunicaciones S.A de C.V", 35, 34);
-    doc.text("Colegio 6300 Int 103, Cima Comercial ", 35, 38);
-    doc.text("C.P 31216, Chihuahua, Chih. Mexico", 35, 42);
-    doc.text("RFC: PCO961119-M49", 35, 46);
+    doc.addImage(logo, 'PNG', 5, 20, logoWidth, logoHeight)
+    doc.text("PV Comunicaciones S.A de C.V", 32, 19);
+    doc.text("Colegio 6300 Int 103, Cima Comercial ", 32, 22);
+    doc.text("C.P 31216, Chihuahua, Chih. Mexico", 32, 25);
+    doc.text("RFC: PCO961119-M49", 32, 28);
 
-    doc.text(lped, 10, 54);
-    doc.text(inped, 35, 54);
+    doc.text(lped, 6, 31.5);
+    doc.text(inped, 32, 31.5);
 
-    doc.text(infec, 75, 54);
+    doc.text(infec, 62, 31.5);
 
     JsBarcode("#code39-lot-number", inped, {
         format: 'CODE39',
         displayValue: false,
-        height: 28,
-        margin: 0
+        height: 22,
+        margin: 0,
+        width: 0.8,
     })
-    doc.addImage(document.querySelector('#code39-lot-number').src, 'JPEG', 35, 60)
+    doc.addImage(document.querySelector('#code39-lot-number').src, 'JPEG', 32, 33)
     
-    doc.text(lpde, 10, 74);
-    doc.text(inpde, 42, 74);
+    doc.text(lpde, 6, 42);
+    doc.text(inpde, 32, 42);
 
-    doc.text(lori, 10, 80);
-    doc.text(inori, 35, 80);
+    doc.text(lori, 6, 45);
+    doc.text(inori, 32, 45);
 
-    doc.text(lmar, 60, 80);
-    doc.text(inmar, 75, 80);
+    doc.text(lmar, 54, 45);
+    doc.text(inmar, 62, 45);
     doc.output('dataurlnewwindow',{filename: indes.value});
 }
