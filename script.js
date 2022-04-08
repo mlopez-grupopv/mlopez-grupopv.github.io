@@ -43,7 +43,7 @@ function pdfexport(){
         displayValue: false,
         height: 22,
         margin: 0,
-        width: 1
+        width: 3
     })
     doc.addImage(document.querySelector('#code39-model').src, 'JPEG', 24, 10, 48, 5)
 
@@ -65,7 +65,7 @@ function pdfexport(){
         displayValue: false,
         height: 22,
         margin: 0,
-        width: 1
+        width: 3
     })
     doc.addImage(document.querySelector('#code39-lot-number').src, 'JPEG', 24, 33, 48, 5)
     
