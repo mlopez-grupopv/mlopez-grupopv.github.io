@@ -30,13 +30,16 @@ function pdfexport(){
 
     doc.roundedRect(1, 1, paperWidth - 2, paperHeight - 2, marginRadio, marginRadio)
 
+    add3of9Font(doc)
     doc.setFontSize(7);
 
     doc.text(ldes, 2, 5);
     doc.text(indes, 24, 5);
 
     doc.text(lmod, 2, 8);
+    doc.setFont('3of9');
     doc.text(inmod, 24, 8);
+    doc.setFont('helvetica')
 
     JsBarcode("#code39-model", inmod, {
         format: 'CODE39',
