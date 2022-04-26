@@ -37,18 +37,13 @@ function pdfexport(){
     doc.text(indes, 24, 5);
 
     doc.text(lmod, 2, 8);
-    doc.setFont('3of9');
     doc.text(inmod, 24, 8);
-    doc.setFont('helvetica')
 
-    JsBarcode("#code39-model", inmod, {
-        format: 'CODE39',
-        displayValue: false,
-        height: 22,
-        margin: 0,
-        width: 3
-    })
-    doc.addImage(document.querySelector('#code39-model').src, 'JPEG', 24, 10, 48, 5)
+    doc.setFont('3of9')
+    doc.setFontSize(16)
+    doc.text('*' + inmod + '*', 24, 14)
+    doc.setFont('helvetica')
+    doc.setFontSize(7)
 
     doc.text("Importador", 2, 19);
     logoHeight = 6; logoWidth = logoHeight * 150 / 45
@@ -63,14 +58,11 @@ function pdfexport(){
 
     doc.text(infec, 55, 31.5);
 
-    JsBarcode("#code39-lot-number", inped, {
-        format: 'CODE39',
-        displayValue: false,
-        height: 22,
-        margin: 0,
-        width: 3
-    })
-    doc.addImage(document.querySelector('#code39-lot-number').src, 'JPEG', 24, 33, 48, 5)
+    doc.setFont('3of9')
+    doc.setFontSize(16)
+    doc.text('*' + inped + '*', 24, 38)
+    doc.setFont('helvetica')
+    doc.setFontSize(7)
     
     doc.text(lpde, 2, 42);
     doc.text(inpde, 24, 42);
